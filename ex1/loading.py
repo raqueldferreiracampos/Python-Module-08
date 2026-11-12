@@ -1,24 +1,22 @@
-import sys
 import importlib
 
 
 def testing_dependencies() -> bool:
-  print("Checking dependencies:")
-  dependencies: dict[str, str] = {
-        "pandas": "Data manipulation ready",
-        "numpy": "Numerical computation ready",
-        "requests": "Network access ready",
-        "matplotlib": "Visualization ready"
-    }
+    print("Checking dependencies:")
+    dependencies: dict[str, str] = {
+          "pandas": "Data manipulation ready",
+          "numpy": "Numerical computation ready",
+          "matplotlib": "Visualization ready"
+      }
 
-  for package, description in dependencies.items():
-    try:
-        importlib.import_module(package)
-        print(f"[OK] {package} - {description}")
-    except ImportError:
-        print(f"[ERROR] {package} is not installed")
-        return False
-  return True
+    for package, description in dependencies.items():
+        try:
+            importlib.import_module(package)
+            print(f"[OK] {package} - {description}")
+        except ImportError:
+            print(f"[ERROR] {package} is not installed")
+            return False
+    return True
 
 
 def main() -> None:
@@ -44,4 +42,4 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-  main()
+    main()
