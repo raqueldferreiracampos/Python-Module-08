@@ -7,7 +7,7 @@ def in_venv() -> bool:
     return sys.prefix != sys.base_prefix
 
 
-def get_directory_path() -> None:
+def get_directory_path() -> str:
     try:
         return (site.getsitepackages()[0])
     except AttributeError:
@@ -27,7 +27,8 @@ def py_env() -> None:
         print(f"Virtual Environment: {venv_name}")
         print(f"Environment Path: {sys.prefix}\n")
         print("SUCCESS: You're in an isolated environment!")
-        print("Safe to install packages without affecting \n the global system.\n")
+        print("Safe to install packages without affecting \n the global"
+              "system.\n")
         print("Package installation path:\n")
         print(get_directory_path())
     else:
